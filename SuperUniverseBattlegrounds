@@ -1,0 +1,167 @@
+
+
+local SuperUniverseBattlegrounds = Instance.new("ScreenGui")
+local On = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+local Off = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+local AttackOnce = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
+local AutoAttack = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
+
+
+
+SuperUniverseBattlegrounds.Name = "SuperUniverseBattlegrounds"
+SuperUniverseBattlegrounds.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+SuperUniverseBattlegrounds.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SuperUniverseBattlegrounds.ResetOnSpawn = false
+
+On.Name = "On"
+On.Parent = SuperUniverseBattlegrounds
+On.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+On.BorderColor3 = Color3.fromRGB(0, 0, 0)
+On.BorderSizePixel = 0
+On.Position = UDim2.new(0, 143, 0, 42)
+On.Size = UDim2.new(0.0769230798, 0, 0.122448981, 0)
+On.Font = Enum.Font.SourceSans
+On.Text = "Toggle On"
+On.TextColor3 = Color3.fromRGB(0, 0, 0)
+On.TextScaled = true
+On.TextSize = 14.000
+On.TextWrapped = true
+
+UICorner.CornerRadius = UDim.new(0, 30)
+UICorner.Parent = On
+
+UIAspectRatioConstraint.Parent = On
+UIAspectRatioConstraint.AspectRatio = 1.000
+
+Off.Name = "Off"
+Off.Parent = SuperUniverseBattlegrounds
+Off.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Off.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Off.BorderSizePixel = 0
+Off.Position = UDim2.new(0, 70, 0, 115)
+Off.Size = UDim2.new(0.0769230798, 0, 0.122448981, 0)
+Off.Font = Enum.Font.SourceSans
+Off.Text = "Toggle Off"
+Off.TextColor3 = Color3.fromRGB(0, 0, 0)
+Off.TextScaled = true
+Off.TextSize = 14.000
+Off.TextWrapped = true
+
+UICorner_2.CornerRadius = UDim.new(0, 30)
+UICorner_2.Parent = Off
+
+UIAspectRatioConstraint_2.Parent = Off
+UIAspectRatioConstraint_2.AspectRatio = 1.000
+
+AttackOnce.Name = "AttackOnce"
+AttackOnce.Parent = SuperUniverseBattlegrounds
+AttackOnce.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AttackOnce.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AttackOnce.BorderSizePixel = 0
+AttackOnce.Position = UDim2.new(0, 682, 0, 175)
+AttackOnce.Size = UDim2.new(0.0769230798, 0, 0.122448981, 0)
+AttackOnce.Font = Enum.Font.SourceSans
+AttackOnce.Text = "Attack Once"
+AttackOnce.TextColor3 = Color3.fromRGB(0, 0, 0)
+AttackOnce.TextScaled = true
+AttackOnce.TextSize = 14.000
+AttackOnce.TextWrapped = true
+
+UICorner_3.CornerRadius = UDim.new(0, 30)
+UICorner_3.Parent = AttackOnce
+
+UIAspectRatioConstraint_3.Parent = AttackOnce
+UIAspectRatioConstraint_3.AspectRatio = 1.000
+
+AutoAttack.Name = "AutoAttack"
+AutoAttack.Parent = SuperUniverseBattlegrounds
+AutoAttack.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AutoAttack.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AutoAttack.BorderSizePixel = 0
+AutoAttack.Position = UDim2.new(0, 636, 0, 42)
+AutoAttack.Size = UDim2.new(0.0769230798, 0, 0.122448981, 0)
+AutoAttack.Font = Enum.Font.SourceSans
+AutoAttack.Text = "Auto Attack"
+AutoAttack.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoAttack.TextScaled = true
+AutoAttack.TextSize = 14.000
+AutoAttack.TextWrapped = true
+
+UICorner_4.CornerRadius = UDim.new(0, 30)
+UICorner_4.Parent = AutoAttack
+
+UIAspectRatioConstraint_4.Parent = AutoAttack
+UIAspectRatioConstraint_4.AspectRatio = 1.000
+
+
+
+local function LOTIRAL_fake_script()
+	local script = Instance.new('LocalScript', On)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		_G.e = true
+	end)
+end
+coroutine.wrap(LOTIRAL_fake_script)()
+local function YNHKVW_fake_script()
+	local script = Instance.new('LocalScript', Off)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		_G.e = false
+	end)
+end
+coroutine.wrap(YNHKVW_fake_script)()
+local function YBBRH_fake_script()
+	local script = Instance.new('LocalScript', AttackOnce)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		for i,v in pairs(game.Players:GetPlayers()) do
+			local args = {
+				[1] = game.Players.LocalPlayer.Character,
+				[2] = "Batman",
+				[3] = "Batarang",
+				[4] = v.Character.HumanoidRootPart.CFrame
+			}
+			game:GetService("ReplicatedStorage").Events.Abilities:FireServer(unpack(args))
+		end
+	end)
+end
+coroutine.wrap(YBBRH_fake_script)()
+local function GKTG_fake_script()
+	local script = Instance.new('LocalScript', AutoAttack)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		while _G.e == true do
+			wait(0.1)
+			for i,v in pairs(game.Players:GetPlayers()) do
+				local args = {
+					[1] = game.Players.LocalPlayer.Character,
+					[2] = "Batman",
+					[3] = "Batarang",
+					[4] = v.Character.HumanoidRootPart.CFrame
+				}
+				game:GetService("ReplicatedStorage").Events.Abilities:FireServer(unpack(args))
+			end
+		end
+	end)
+end
+coroutine.wrap(GKTG_fake_script)()
+local function WFODD_fake_script()
+	local script = Instance.new('LocalScript', SuperUniverseBattlegrounds)
+
+	local StarterGui = game:GetService("StarterGui")
+	StarterGui:SetCore("SendNotifications", {
+		Title = "Super Universe Battlegrounds",
+		Text = "Made by Andrew Tate (lebgdu94).",
+		Duration = 5
+	})
+end
+coroutine.wrap(WFODD_fake_script)()
